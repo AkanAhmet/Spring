@@ -1,0 +1,92 @@
+DOCKER => /////////////////////////////////////////////////////////////////////////////////////////////
+
+docker ps => Aktif konteynırın  özelliklerini gösterir
+docker stop ContainerID => Durdurma işlemi.
+docker stop $(docker ps -qa) => Tüm docker image leri durdurulur.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+NOSQL NEDİR? => /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	NoSQL sistemlerin avantajlarına değinmek gerekirse ilk olarak performans gösterilebilir. 
+Okuma ve yazma işlemleri ilişkisel veritabanlarına göre çok daha hızlı olmaktadır. İkinci olarak ise NoSQL sistemler yatay olarak genişletilebilirler. Binlerce sunucu bir arada çalışarak inanılmaz derecedeki veriler üzerinde işlemler yapabilir.
+	İlişkisel veritabanı sistemlerinde veriler tablo ve sütunlar ile ilişkili bir şekilde tutulurken NoSQL’de json bir yapıda tutulmasıdır.
+Bugün piyasada Cassandra, BigTable, Dynamo gibi birçok NoSQL veritabanı bulunmaktadır.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+MONGO DB => /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	
+	MongoDB 2009 yılında geliştirilmiş açık kaynak kodlu bir NoSQL veritabanıdır. MongoDB’de her kayıt bir doküman olarak ifade edilir. Ve bu dökümanlar json formatı şeklinde saklanır. Daha önce ilişkisel veritabanlarıyla ilgilenenlerin bildiği table yapısını burada collection, row yapısını document, column yapısını ise field alır.
+
+	Veritabanı image oluşturmak için intellij içinde create new file => docker-compose.yml
+"""
+version: '3.1'
+services:
+  mongo:
+    image: mongo
+    ports:
+     - '27017:27017'
+    command: --serviceExecutor adaptive
+"""
+Sonra cmd :
+	docker-compose -f dosyayolu/docker-compose.yml up -d
+	
+Spring Initializer den data Mongo yu ekle projeye
+
+application.properties dosyasına;
+"""
+spring.data.mongodb.database= mongo-tablosu
+spring.data.mongodb.uri= mongodb://localhost:27017
+"""
+Main sınıfa @EnableMongoRepositories Anotasyonu eklenir.
+Robo 3T ile Mongodb görüntülenebilir.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ELASTICSEARCH DB => /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Main sınıfa @EnableElasticSearchRepositories Anotasyonu eklenir.
+
+src/main/resources/docker-compose.yml =>
+"""
+version: '3.1'
+services:
+  elasticsearch:
+    image: library/elasticsearch:7.10.1
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    environment:
+      - discovery.type=single-node
+"""
+==> Intellij Terminal -> cd src/main/resources -> docker-compose -f docker-compose.yml up -d 
+
+==> http://localhost:9200/ ile Kontrol edilir.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+POSTGRESQL DB => /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+src/main/resources/docker-compose.yml =>
+"""
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+    - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+"""
+==> Intellij Terminal -> cd src/main/resources -> docker-compose -f docker-compose.yml up -d 
+
+src/main/resources/application.properties =>
+"""
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:postgresql://localhost:5432/javadb
+spring.datasource.username=postgres
+spring.datasource.password= example
+"""
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
