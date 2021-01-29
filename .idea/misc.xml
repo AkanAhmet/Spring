@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Spring Boot/PostgreSQL/PostgreSQL/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring Boot/Mongo Db (NOSQL)/mdb/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring Boot/ElasticSeach (NOSQL)/ElasticSearch/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring Boot/Java Persistence Api/JPA/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring Boot/Saving datas on the List/topics/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK" />
+</project>

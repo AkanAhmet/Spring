@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Spring Boot/ElasticSeach (NOSQL)/ElasticSearch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring Boot/ElasticSeach (NOSQL)/ElasticSearch/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring Boot/Java Persistence Api/JPA/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring Boot/Java Persistence Api/JPA/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring Boot/Mongo Db (NOSQL)/mdb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring Boot/Mongo Db (NOSQL)/mdb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring Boot/PostgreSQL/PostgreSQL/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring Boot/PostgreSQL/PostgreSQL/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring Boot/Saving datas on the List/topics/src/main/java" charset="UTF-8" />
+  </component>
+</project>
