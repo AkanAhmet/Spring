@@ -1,0 +1,9 @@
+docker run -p 6379:6379 --name rediscache -d redis -> Docker aktif konteynır : docker ps
+cmd : redis-commander -> http://localhost:8081/
+
+!!! ÖNEMLİ -> pom.xml -> 
+<dependency>
+  <groupId>redis.clients</groupId>
+  <artifactId>jedis</artifactId>
+</dependency>
+-----------------------------------
